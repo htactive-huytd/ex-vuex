@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
-    result: 0
+    result: 0,
+    value: ""
   },
   getters: {
     tenResult: state => {
@@ -13,6 +14,9 @@ export const store = new Vuex.Store({
     },
     nameResult: state => {
       return state.result + " name result";
+    },
+    value: state => {
+      return state.value
     }
   },
   mutations: {
@@ -20,18 +24,24 @@ export const store = new Vuex.Store({
     increment(state) {
       state.result++;
     },
-    decreatement(state){
+    decreatement(state) {
       state.result--;
+    },
+    updateValue: (state, payload) => {
+      state.value = payload;
     }
   },
-  actions:{
-    increment: ({commit}) => {
+  actions: {
+    increment: ({ commit }) => {
       commit("increment");
     },
-    asyncdecrement: ({commit}) => {
-      setTimeout(()=>{
+    asyncdecrement: ({ commit }) => {
+      setTimeout(() => {
         commit('decreatement');
-      },2000);
+      }, 2000);
+    },
+    updateValue: ({ commit }) => {
+      commit('updateValue', payload);
     }
   }
 })
