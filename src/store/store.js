@@ -2,6 +2,10 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import Result from './modules/Result'
 
+//import tat ca chi tiet trong module actions o duong dan ./actions
+import * as actions from './actions'
+import * as getters from './getters'
+import * as mutations from './mutations'
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
@@ -9,24 +13,9 @@ export const store = new Vuex.Store({
 
     value: ""
   },
-  getters: {
-
-    value: state => {
-      return state.value
-    }
-  },
-  mutations: {
-
-    updateValue: (state, payload) => {
-      state.value = payload;
-    }
-  },
-  actions: {
-
-    updateValue: ({ commit }, payload) => {
-      commit('updateValue', payload);
-    }
-  },
+  getters,
+  mutations,
+  actions,
   modules: {
     Result
   }
