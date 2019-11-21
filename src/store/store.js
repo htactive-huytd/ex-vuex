@@ -19,6 +19,9 @@ export const store = new Vuex.Store({
     //thay doi reault o state, nen se thay doi tat ca cac component con
     increateOp(state, num) {
       state.result += num;
+    },
+    decreatement(state){
+      state.result--;
     }
   }
 })
