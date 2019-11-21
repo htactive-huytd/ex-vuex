@@ -1,17 +1,15 @@
 <template>
   <div>
-    <button @click="increatement">Increatement</button>
+    <button @click="increment">Increatement</button>
     <button @click="decreatement">Increatement</button>
   </div>
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapActions, mapMutations } from "vuex";
 export default {
   methods: {
-    increatement() {
-      this.$store.commit("increateOp", 30);
-    },
+    ...mapActions(["increment"]),
     ...mapMutations(["decreatement"])
   }
 };

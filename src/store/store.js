@@ -17,11 +17,16 @@ export const store = new Vuex.Store({
   },
   mutations: {
     //thay doi reault o state, nen se thay doi tat ca cac component con
-    increateOp(state, num) {
-      state.result += num;
+    increment(state) {
+      state.result++;
     },
     decreatement(state){
       state.result--;
+    }
+  },
+  actions:{
+    increment: ({commit}) => {
+      commit("increment");
     }
   }
 })
