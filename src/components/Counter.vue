@@ -4,7 +4,7 @@
     <button @click="asyncdecrement">Increatement</button>
     <hr>
     <br>
-    <input type="text" v-model="value">
+    <input type="text" :value="value" @input="updateValue">
     <p>Text test: {{value}}</p>
   </div>
 </template>
@@ -19,7 +19,11 @@ export default {
   },
   methods: {
     ...mapActions(["increment", "asyncdecrement"]),
-    ...mapMutations(["decreatement"])
+    ...mapMutations(["decreatement"]),
+    updateValue(event){
+      // dispatch() cái mà ta có thể kích hoạt sự kiện trong actions
+      this.$store.dispatch('updateValue', event.target.value)
+    }
   }
 };
 </script>

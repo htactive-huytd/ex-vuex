@@ -40,7 +40,7 @@ export const store = new Vuex.Store({
         commit('decreatement');
       }, 2000);
     },
-    updateValue: ({ commit }) => {
+    updateValue: ({ commit },payload) => {
       commit('updateValue', payload);
     }
   }
