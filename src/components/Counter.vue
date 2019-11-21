@@ -9,7 +9,7 @@
 export default {
   methods: {
     increatement() {
-      this.$store.state.result++;
+      this.$store.commit('increateOp',30);
     },
     decreatement() {
       this.$store.state.result--;
