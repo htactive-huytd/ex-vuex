@@ -5,11 +5,10 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex';
 export default {
   computed: {
-    result(){
-      return this.$store.state.result
-    }
-  },
+    ...mapGetters(['result'])
+  }
 }
 </script>
