@@ -8,7 +8,7 @@
 export default {
   computed: {
     result(){
-      return this.$store.state.result
+      return this.$store.getters.tenResult
     }
   },
 }
